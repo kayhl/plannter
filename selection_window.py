@@ -1,14 +1,16 @@
 import customtkinter as ctk
 from veg_data import vegetables
+from datetime import timedelta
 
 class SelectionWindow(ctk.CTkToplevel):
-    def __init__(self, parent, selection, data):
+    def __init__(self, parent, option, data):
         super().__init__(parent, fg_color="#B8E3C2")
         self.title("Plannter")
         self.geometry("400x1000")
         self.header_font = ctk.CTkFont(family="Helvetica", size=24, weight="bold")
         self.base_font = ctk.CTkFont(family="Helvetica", size=20)
         self.after(10, self.lift)
+        self.option = option
 
         self.header = ctk.CTkLabel(self,
             text="Select vegetables:",
@@ -43,14 +45,20 @@ class SelectionWindow(ctk.CTkToplevel):
         self.submit_button.pack(padx=4, pady=4)
 
     def generate_plan(self):
-        print("\n  =====  Vegetable Harvest  =====  ")
-        print("\nPlant these vegetables in March:")
-        for veg, var in self.checked_state.items():
-            if var.get() == 1:            
-                if 3 in vegetables[veg]["planting"]:
-                    print(f"{veg} ready to harvest in {vegetables[veg]['days_to_harvest']} days")
-        print("\nPlant these vegetables in April:")
-        for veg, var in self.checked_state.items():
-            if var.get() == 1:            
-                if 4 in vegetables[veg]["planting"]:
-                    print(f"{veg} ready to harvest in {vegetables[veg]['days_to_harvest']} days")
+        if self.option == "plant":
+            print("\n  =====  Vegetable Harvest  =====  ")
+            print("\nPlant these vegetables in March:")
+            for veg, var in self.checked_state.items():
+                if var.get() == 1:            
+                    if 3 in vegetables[veg]["planting"]:
+                        print(f"{veg} will be ready to harvest in {vegetables[veg]['days_to_harvest']} days")
+            print("\nPlant these vegetables in April:")
+            for veg, var in self.checked_state.items():
+                if var.get() == 1:            
+                    if 4 in vegetables[veg]["planting"]:
+                        print(f"{veg} will be ready to harvest in {vegetables[veg]['days_to_harvest']} days")
+        elif self.option == "harvest":
+            pass
+            
+        else:
+            print("No selection made")
