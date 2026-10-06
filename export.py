@@ -2,7 +2,7 @@ import os
 from fpdf import FPDF
 from font_config import FONT_FAMILY, HEADER_SIZE, BASE_SIZE
 
-def export_to_pdf(title, lines, filename="plannter"):
+def export_to_pdf(title, lines, filename="plannter.pdf"):
     script_dir = os.path.dirname(os.path.abspath(__file__))
     export_dir = os.path.join(script_dir, "exports")
     output_path = os.path.join(export_dir, filename)

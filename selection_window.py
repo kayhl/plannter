@@ -1,6 +1,5 @@
 import customtkinter as ctk
 from font_config import FONT_FAMILY, HEADER_SIZE, BASE_SIZE
-from veg_data import vegetables
 from datetime import datetime, timedelta
 from export import export_to_pdf
 
@@ -57,7 +56,7 @@ class SelectionWindow(ctk.CTkToplevel):
 
         self.submit_button = ctk.CTkButton(
             self,
-            text="Submit",
+            text="Create PDF",
             text_color="#000000",
             command=self.generate_plan,
             fg_color="#FFFFFF",
