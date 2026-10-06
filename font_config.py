@@ -1,0 +1,3 @@
+FONT_FAMILY = "Helvetica"
+HEADER_SIZE = 24
+BASE_SIZE = 18

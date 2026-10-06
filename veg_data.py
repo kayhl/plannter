@@ -62,7 +62,7 @@ vegetables = {
         "days_to_harvest": 75,
         "sunlight": "Full"
     },
-    "Peppers - hot": {
+    "Peppers (hot)": {
         "planting": [4],
         "days_to_harvest": 100,
         "sunlight": "Full"
@@ -82,12 +82,12 @@ vegetables = {
         "days_to_harvest": 42,
         "sunlight": "Partial"
     },
-    "Squash - butternut": {
+    "Butternut squash": {
         "planting": [4],
         "days_to_harvest": 100,
         "sunlight": "Full"
     },
-    "Squash - spaghetti": {
+    "Spaghetti squash": {
         "planting": [4],
         "days_to_harvest": 90,
         "sunlight": "Full"
